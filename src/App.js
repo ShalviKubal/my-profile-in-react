@@ -8,6 +8,8 @@ import Home from './component/Home';
 import Welcome from './component/Welcome';
 import Error from './component/Error';
 import Navigation from './component/Navigation';
+import About from './component/About';
+import ContactUs from './component/ContactUs';
 
 class App extends Component {
   render() {
@@ -17,9 +19,11 @@ class App extends Component {
           <div>
             <Navigation/>
             <Switch>
-                <Route path="/" component={Welcome} exact/>
-                <Route path="/login" component={LoginToApp}/>
-                <Route path="/home" component={Home}/>
+                <Route path="/" component={Welcome} exact/> 
+                <Route path="/login/" component={LoginToApp} strict/> 
+                <Route path="/home/:username" component={Home}/>              
+                <Route path="/about" component={About}>about</Route>
+                <Route path="/contactus" component={ContactUs}>contactus</Route>
                 <Route component={Error}/>
             </Switch>
             </div>
@@ -30,3 +34,6 @@ class App extends Component {
 }
 
 export default App;
+
+// exact is used so that partial matched urls are not included
+//strict is used so that /login/ is true but not /login

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class Home extends Component {
-    render() {
+    render(props) {
+        const userName = this.props.match.params.username;
         return (
             <div>
-                Home
+                Home- {userName}
             </div>
             );
     }
