@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 class About extends Component {
-    render() {
+    render(props) {
+        const userName = this.props.match.params.username;
         return (
             <div>
-                Error! error in path
+                About {userName}
             </div>
             );
     }
